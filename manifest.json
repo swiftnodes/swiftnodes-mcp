@@ -20,14 +20,89 @@
     "entry_point": "bin/server.js",
     "mcp_config": {
       "command": "node",
-      "args": ["${__dirname}/bin/server.js"]
+      "args": [
+        "${__dirname}/bin/server.js"
+      ]
     }
   },
   "tools": [
-    { "name": "list_chains", "description": "List every chain SwiftNodes serves (name, slug, chain ID, category, docs page)." },
-    { "name": "get_chain", "description": "Full details for one chain: IDs, endpoints, docs links." },
-    { "name": "get_pricing", "description": "Live flat-rate plans from the public API." },
-    { "name": "get_method_support", "description": "Which JSON-RPC methods work on which chain, auto-probed weekly." },
-    { "name": "probe_endpoint", "description": "Diagnose any EVM JSON-RPC endpoint: chain identity, height, archive capability, latency." }
+    {
+      "name": "list_chains",
+      "description": "List every chain SwiftNodes serves (name, slug, chain ID, category, docs page).",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Optional name/slug substring filter, e.g. 'base' or 'zksync'."
+          },
+          "evm_only": {
+            "type": "boolean",
+            "description": "If true, only EVM chains are returned."
+          }
+        }
+      }
+    },
+    {
+      "name": "get_chain",
+      "description": "Full details for one chain: IDs, endpoints, docs links.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "chain": {
+            "type": "string",
+            "description": "Chain name or slug, e.g. 'Ethereum', 'base', 'zksync'."
+          }
+        },
+        "required": [
+          "chain"
+        ]
+      }
+    },
+    {
+      "name": "get_pricing",
+      "description": "Live flat-rate plans from the public API.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      }
+    },
+    {
+      "name": "get_method_support",
+      "description": "Which JSON-RPC methods work on which chain, auto-probed weekly.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "description": "Optional method name, e.g. 'trace_filter' or 'eth_getProof'."
+          }
+        }
+      }
+    },
+    {
+      "name": "probe_endpoint",
+      "description": "Diagnose any EVM JSON-RPC endpoint: chain identity, height, archive capability, latency.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "The http(s) RPC endpoint URL to probe."
+          },
+          "method": {
+            "type": "string",
+            "description": "Optional JSON-RPC method to call, e.g. 'eth_chainId'."
+          },
+          "params": {
+            "type": "array",
+            "description": "Optional params array for the method call."
+          }
+        },
+        "required": [
+          "url"
+        ]
+      }
+    }
   ]
 }
