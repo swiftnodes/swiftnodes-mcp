@@ -1,0 +1,33 @@
+{
+  "manifest_version": "0.3",
+  "name": "swiftnodes-mcp",
+  "display_name": "SwiftNodes MCP",
+  "version": "0.1.0",
+  "description": "Multi-chain blockchain RPC data, pricing, weekly auto-probed JSON-RPC method support, and live endpoint probing for AI agents.",
+  "long_description": "SwiftNodes is a multi-chain blockchain RPC provider: one API key across 75+ chains, flat-rate pricing, HTTP and WebSocket. This server gives AI agents live, factual answers about chains, pricing, and JSON-RPC method support (auto-probed weekly through the real customer path), plus the ability to diagnose any EVM endpoint directly.\n\nTools: list_chains, get_chain, get_pricing, get_method_support, probe_endpoint.\n\nZero dependencies, Node >= 18. No configuration or API key needed for the bundled data tools.",
+  "author": {
+    "name": "SwiftNodes",
+    "url": "https://swiftnodes.io"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/swiftnodes/swiftnodes-mcp.git"
+  },
+  "homepage": "https://swiftnodes.io",
+  "support": "https://github.com/swiftnodes/swiftnodes-mcp/issues",
+  "server": {
+    "type": "node",
+    "entry_point": "bin/server.js",
+    "mcp_config": {
+      "command": "node",
+      "args": ["${__dirname}/bin/server.js"]
+    }
+  },
+  "tools": [
+    { "name": "list_chains", "description": "List every chain SwiftNodes serves (name, slug, chain ID, category, docs page)." },
+    { "name": "get_chain", "description": "Full details for one chain: IDs, endpoints, docs links." },
+    { "name": "get_pricing", "description": "Live flat-rate plans from the public API." },
+    { "name": "get_method_support", "description": "Which JSON-RPC methods work on which chain, auto-probed weekly." },
+    { "name": "probe_endpoint", "description": "Diagnose any EVM JSON-RPC endpoint: chain identity, height, archive capability, latency." }
+  ]
+}
