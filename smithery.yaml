@@ -1,0 +1,12 @@
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+    required: []
+  commandFunction:
+    |-
+    (config) => ({
+      command: 'node',
+      args: ['bin/server.js']
+    })
