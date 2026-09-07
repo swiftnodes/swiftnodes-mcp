@@ -7,6 +7,9 @@
   "bin": { "swiftnodes-mcp": "bin/server.js" },
   "files": ["bin/", "data/"],
   "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "echo 'No build step required'"
+  },
   "keywords": ["mcp", "model-context-protocol", "rpc", "json-rpc", "ethereum", "evm", "blockchain", "web3", "endpoint", "claude", "ai-agent"],
   "repository": { "type": "git", "url": "https://github.com/swiftnodes/swiftnodes-mcp" },
   "homepage": "https://swiftnodes.io",
