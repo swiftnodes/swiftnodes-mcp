@@ -1,0 +1,9 @@
+{
+  "name": "swiftnodes-mcp",
+  "description": "Multi-chain blockchain RPC data, pricing, weekly auto-probed JSON-RPC method support, and live endpoint probing for AI agents.",
+  "version": "0.1.0",
+  "transport": "stdio",
+  "command": "node",
+  "args": ["bin/server.js"],
+  "nodeVersion": "18"
+}
