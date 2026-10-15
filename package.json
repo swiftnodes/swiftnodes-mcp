@@ -1,6 +1,6 @@
 {
   "name": "swiftnodes-mcp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "MCP server for SwiftNodes \u2014 multi-chain RPC data, flat-rate pricing, weekly auto-probed JSON-RPC method support, and live endpoint probing for AI agents.",
   "license": "MIT",
   "type": "module",

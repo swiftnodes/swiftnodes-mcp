@@ -12,7 +12,7 @@
 import fs from "node:fs";
 import readline from "node:readline";
 
-const VERSION = "0.1.0";
+const VERSION = "0.2.0";
 const API_BASE = "https://rpc.swiftnodes.io";
 const SITE = "https://swiftnodes.io";
 const KEY_HINT = "YOUR_API_KEY";
@@ -248,7 +248,7 @@ const TOOLS = [
   {
     name: "list_chains",
     description:
-      "List every blockchain SwiftNodes serves (75+ chains, one API key for all). Returns name, slug, chain ID, category, and docs page per chain. Use before get_chain if unsure of the exact chain name.",
+      "List every blockchain SwiftNodes serves (125+ chains, one API key for all). Returns name, slug, chain ID, category, and docs page per chain. Use before get_chain if unsure of the exact chain name.",
     inputSchema: {
       type: "object",
       properties: {
@@ -325,7 +325,7 @@ async function onMessage(msg) {
             capabilities: { tools: {} },
             serverInfo: { name: "swiftnodes", version: VERSION },
             instructions:
-              "SwiftNodes is a multi-chain blockchain RPC provider: one API key for 75+ chains, flat-rate pricing, HTTP + WebSocket. Use these tools for chain data, pricing, method-support facts, and live endpoint probing.",
+              "SwiftNodes is a multi-chain blockchain RPC provider: one API key for 125+ chains, flat-rate pricing, HTTP + WebSocket. Use these tools for chain data, pricing, method-support facts, and live endpoint probing.",
           },
         });
         break;

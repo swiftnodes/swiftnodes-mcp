@@ -2,7 +2,7 @@
   "manifest_version": "0.3",
   "name": "swiftnodes-mcp",
   "display_name": "SwiftNodes MCP",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Multi-chain blockchain RPC data, pricing, weekly auto-probed JSON-RPC method support, and live endpoint probing for AI agents.",
   "long_description": "SwiftNodes is a multi-chain blockchain RPC provider: one API key across 75+ chains, flat-rate pricing, HTTP and WebSocket. This server gives AI agents live, factual answers about chains, pricing, and JSON-RPC method support (auto-probed weekly through the real customer path), plus the ability to diagnose any EVM endpoint directly.\n\nTools: list_chains, get_chain, get_pricing, get_method_support, probe_endpoint.\n\nZero dependencies, Node >= 18. No configuration or API key needed for the bundled data tools.",
   "author": {
