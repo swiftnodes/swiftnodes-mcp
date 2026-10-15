@@ -2,7 +2,30 @@
 
 An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server for [SwiftNodes](https://swiftnodes.io) — multi-chain blockchain RPC, exposed to AI agents.
 
-One API key, 75+ chains, flat-rate pricing. This server gives Claude, ChatGPT, Cursor, and any MCP client live, factual answers about chains, pricing, and JSON-RPC method support — plus the ability to probe any EVM endpoint directly.
+One API key, 125+ chains, flat-rate pricing. This server gives Claude, ChatGPT, Cursor, and any MCP client live, factual answers about chains, pricing, and JSON-RPC method support — plus the ability to probe any EVM endpoint directly.
+
+## Hosted server (recommended)
+
+SwiftNodes runs this server for you at **`https://rpc.swiftnodes.io/mcp`** (Streamable HTTP). Nothing to install.
+
+```bash
+claude mcp add --transport http --scope user swiftnodes https://rpc.swiftnodes.io/mcp \ --header "Authorization: Bearer $SWIFTNODES_API_KEY"
+```
+
+Cursor and other clients (`~/.cursor/mcp.json`):
+
+```json
+{ "mcpServers": { "swiftnodes": { "url": "https://rpc.swiftnodes.io/mcp", "headers": { "Authorization": "Bearer YOUR_API_KEY" } } } }
+```
+
+The key is optional: without it the public tools below work. With it, two more tools are available:
+
+| Tool | What it does |
+|---|---|
+| `rpc_call` | Make a JSON-RPC call on any SwiftNodes chain with your key (counts against your plan like any request). |
+| `get_account` | Your plan, rate limits, requests used this month, and the IP/origin restrictions on the key. Never returns key values. |
+
+Listed in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.swiftnodes/swiftnodes`. Docs: https://swiftnodes.io/docs/mcp
 
 ## Tools
 
@@ -14,7 +37,7 @@ One API key, 75+ chains, flat-rate pricing. This server gives Claude, ChatGPT, C
 | `get_method_support` | Which JSON-RPC methods work on which chain — auto-probed weekly through the same path customer requests take. Overview or per-method detail. |
 | `probe_endpoint` | Diagnose any EVM JSON-RPC endpoint (ours or anyone's): chain identity, block height, archive capability, latency — or run a specific method call. |
 
-## Install
+## Run it locally (stdio)
 
 Zero dependencies, Node >= 18.
 

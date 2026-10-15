@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.swiftnodes/swiftnodes",
+  "title": "SwiftNodes RPC",
+  "description": "Blockchain RPC for 125+ chains: endpoints, method support, probing and RPC calls with your key.",
+  "websiteUrl": "https://swiftnodes.io/docs/mcp",
+  "repository": { "url": "https://github.com/swiftnodes/swiftnodes-mcp", "source": "github" },
+  "version": "1.0.0",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://rpc.swiftnodes.io/mcp",
+      "headers": [
+        { "name": "Authorization", "description": "Optional. Bearer <your SwiftNodes API key> enables rpc_call and get_account. Free keys at https://swiftnodes.io", "isRequired": false, "isSecret": true }
+      ]
+    }
+  ]
+}
