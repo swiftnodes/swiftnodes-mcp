@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "swiftnodes": {
+      "url": "https://rpc.swiftnodes.io/mcp",
+      "headers": { "Authorization": "Bearer ${env:SWIFTNODES_API_KEY}" }
+    }
+  }
+}

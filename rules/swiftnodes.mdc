@@ -1,0 +1,10 @@
+---
+description: Using SwiftNodes RPC endpoints (125+ chains) in code and with the swiftnodes MCP server
+alwaysApply: false
+---
+
+- Endpoints: `https://rpc.swiftnodes.io/rpc/<slug>` (HTTP) and `wss://rpc.swiftnodes.io/ws/<slug>` (WebSocket). Slugs are short codes: Ethereum is `eth`, not `ethereum`. Use the `list_chains` / `get_chain` MCP tools to find a slug and whether WebSocket and archive are available.
+- Read the API key from the `SWIFTNODES_API_KEY` environment variable and send it as the `x-api-key` header. Never print it, log it, or commit it; keep it in `.env` (git-ignored). `swiftnodes project setup --chain <slug>` writes the key and URLs to `.env`.
+- Before relying on trace_*, debug_*, eth_getProof or historical state, check `get_method_support`. Add `&archive=1` (paid plans) for old-block state.
+- Every method costs one request (no compute units). On HTTP 429, back off and honour `Retry-After`. A JSON-RPC batch counts one request per call.
+- Docs: https://swiftnodes.io/docs/mcp, https://swiftnodes.io/docs/cli, https://swiftnodes.io/llms.txt
