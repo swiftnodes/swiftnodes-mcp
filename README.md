@@ -9,7 +9,7 @@ One API key, 125+ chains, flat-rate pricing. This server gives Claude, ChatGPT, 
 SwiftNodes runs this server for you at **`https://rpc.swiftnodes.io/mcp`** (Streamable HTTP). Nothing to install.
 
 ```bash
-claude mcp add --transport http --scope user swiftnodes https://rpc.swiftnodes.io/mcp \ --header "Authorization: Bearer $SWIFTNODES_API_KEY"
+claude mcp add --transport http --scope user swiftnodes https://rpc.swiftnodes.io/mcp --header "Authorization: Bearer $SWIFTNODES_API_KEY"
 ```
 
 Cursor and other clients (`~/.cursor/mcp.json`):
