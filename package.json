@@ -28,7 +28,10 @@
     "web3",
     "endpoint",
     "claude",
-    "ai-agent"
+    "ai-agent",
+    "bnb-chain",
+    "bsc",
+    "opbnb"
   ],
   "repository": {
     "type": "git",

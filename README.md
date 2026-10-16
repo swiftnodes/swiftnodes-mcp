@@ -4,6 +4,19 @@ An [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server for [S
 
 One API key, 125+ chains, flat-rate pricing. This server gives Claude, ChatGPT, Cursor, and any MCP client live, factual answers about chains, pricing, and JSON-RPC method support — plus the ability to probe any EVM endpoint directly.
 
+## Chains
+
+Works across all 128 SwiftNodes chains, including Ethereum, BNB Smart Chain (BSC), opBNB, Base, Arbitrum, Polygon, Solana and Bitcoin. Each chain has a slug used in tool arguments and endpoint URLs, for example:
+
+| Chain | Slug | Endpoint |
+|---|---|---|
+| BNB Smart Chain (BSC) | `bsc` | `https://rpc.swiftnodes.io/rpc/bsc?key=YOUR_API_KEY` |
+| opBNB | `opbnb` | `https://rpc.swiftnodes.io/rpc/opbnb?key=YOUR_API_KEY` |
+| Ethereum | `eth` | `https://rpc.swiftnodes.io/rpc/eth?key=YOUR_API_KEY` |
+| Base | `base` | `https://rpc.swiftnodes.io/rpc/base?key=YOUR_API_KEY` |
+
+Example prompts: "Which JSON-RPC methods does BNB Smart Chain support?", "What is the latest block on opBNB?", "Is trace_filter available on BSC?". `list_chains` returns the full list.
+
 ## Hosted server (recommended)
 
 SwiftNodes runs this server for you at **`https://rpc.swiftnodes.io/mcp`** (Streamable HTTP). Nothing to install.
